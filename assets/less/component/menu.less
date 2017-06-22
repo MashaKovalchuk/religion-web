@@ -1,0 +1,149 @@
+// меню 
+
+// цвета меню пробуем задать автоматом
+
+@menu_bg: @color1; // основной цвет меню
+
+@menu_divider: @gray300; // цвет разделителя
+@menu_height: 48px; // высота меню
+@menu_height_submenu: 35px; // высота подменю горизонтального
+
+@menu_menu1_padding_hor: 20px; // padding-rl для tablet 
+
+// top
+@menu_top_text: #EEEEEE; // текст
+@menu_top_bg: transparent; // фон
+@menu_top_hover_text: #ffffff; // текст при наведении
+@menu_top_hover_bg: darken(@menu_bg, 10%); // фон при наведении
+
+// top selected
+@menu_selected_text: #ffffff; // текст
+@menu_selected_bg: darken(@menu_bg, 10%); // фон
+@menu_selected_hover_text: #ffffff; // текст при наведении
+@menu_selected_hover_bg: darken(@menu_bg, 10%); // фон при наведении
+
+// group верхний пункт при наведении
+@menu_top_group_hover_text: #ffffff; // текст при наведении
+@menu_top_group_hover_bg: darken(@menu_bg, 10%); // фон при наведении
+
+// group_open открытое подменю
+@menu_top_group_open_hover_text: #ffffff; // текст при наведении
+@menu_top_group_open_hover_bg: darken(@menu_bg, 10%); // фон при наведении
+
+// подменю
+@menu_submenu_text: #444444; // текст
+@menu_submenu_bg: #ffffff; // фон
+@menu_submenu_hover_text: #ffffff; // текст при наведении
+@menu_submenu_hover_bg: darken(@menu_bg, 10%); // фон при наведении
+
+// tablet
+@menu_tablet_base_bg: lighten(@menu_bg, 5%); // общий фон меню
+
+@menu_tablet_control_text: #ffffff; // текст кнопки
+@menu_tablet_control_bg: @menu_bg; // фон кнопки
+
+@menu_tablet_hover_text: #ffffff; // текст при наведении
+@menu_tablet_hover_bg: darken(@menu_bg, 10%); // фон при наведении
+
+// подменю
+@menu_tablet_submenu_text: #ffffff; // текст
+@menu_tablet_submenu_bg: lighten(@menu_bg, 7%); // фон
+@menu_tablet_submenu_hover_text: #ffffff; // текст
+@menu_tablet_submenu_hover_bg: darken(@menu_bg, 5%); // фон
+
+@menu_tablet_divider: darken(@menu_bg, 5%); // разделитель
+
+
+
+@import 'mix-menu.less';
+
+.menu-control {
+	display: none;
+}
+
+div.menu1 {
+	background: @menu_bg;
+	padding: 0 @menu_menu1_padding_hor; // это зависит от шаблона
+	position: relative;
+}
+
+ul.menu {
+
+	.menu > .base();
+	
+	.menu > .top > .height(@menu_height, @menu_height, 0 10px, 0 0 0 0);
+	.menu > .top > .color(@menu_top_text, @menu_top_bg); 
+	.menu > .top > .hover(@menu_top_hover_text, @menu_top_hover_bg);
+	
+	.menu > .submenu > .height(@menu_height_submenu, @menu_height_submenu, 0 40px 0 10px);
+	.menu > .submenu > .color(@menu_submenu_text, @menu_submenu_bg);
+	.menu > .submenu > .hover(@menu_submenu_hover_text, @menu_submenu_hover_bg);
+	.menu > .submenu > .nowrap;
+
+	.menu > .divider(@menu_divider 1px solid);
+	.menu > .set_arrows(FontAwesome, "\f107", "\f105");
+	
+	li.selected a 
+	{
+		.menu > .selected > .color(@menu_selected_text, @menu_selected_bg);
+		.menu > .selected > .hover(@menu_selected_hover_text, @menu_selected_hover_bg);
+	}
+	
+	li.group ul {
+		box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+	}
+	
+	li.group ul li.selected {
+		font-weight: bold;
+	}
+	
+	li.group-open > a {
+		color: @menu_top_group_open_hover_text;
+		background-color: @menu_top_group_open_hover_bg;
+	}
+	
+	> li.group:hover > a {
+		color: @menu_top_group_hover_text;
+		background-color: @menu_top_group_hover_bg;
+	}
+}
+
+@media @SCREEN_TABLET {
+	
+	div.menu1-tablet {
+		background: transparent;
+	}
+	
+	.menu > .tablet > .control();
+	
+	label.menu-control {
+		display: inline-block;
+		padding: 0 10px;
+		height: @menu_height;
+		line-height: @menu_height;
+		width: 100%;
+		font-weight: bold;
+		background: @menu_tablet_control_bg;
+		color: @menu_tablet_control_text;
+	}
+	
+	ul.menu-tablet {
+		.menu > .tablet > .base();
+		
+		@p1: @menu_menu1_padding_hor * 2;
+		
+		top: @menu_height;
+		width: ~"calc(100% - @{p1})"; 
+		background-color: @menu_tablet_base_bg;
+		
+		box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.5);
+	
+		.menu > .top > .hover(@menu_tablet_hover_text, @menu_tablet_hover_bg);
+		
+		.menu > .submenu > .height(@menu_height, @menu_height, 0 20px 0 40px);
+		.menu > .submenu > .color(@menu_tablet_submenu_text, @menu_tablet_submenu_bg);
+		.menu > .submenu > .hover(@menu_tablet_submenu_hover_text, @menu_tablet_submenu_hover_bg);
+		
+		.menu > .divider(@menu_tablet_divider 1px dotted, 0 35px, @menu_tablet_submenu_bg);
+	}
+}

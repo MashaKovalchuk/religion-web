@@ -1,6 +1,4 @@
-Диспетчер опций шаблона.
+Опции шаблона в виде ini-файлов.
 
-Файл подключать в своем шаблоне в файле options.php
- 
-require_once(getinfo('shared_dir') . 'options/options.php');
- 
+В options.php - диспетчер файлов. По-умолчанию испльзуются опции из ini-файлов
+в shared/options/default/
