@@ -1,0 +1,255 @@
+1497535310TS--->a:9:{s:7:"general";a:53:{s:10:"admin_nick";s:4:"Mary";s:9:"name_site";s:87:"Религиозная община христиан полного Евангелия ";s:5:"title";s:130:"Религиозная община христиан полного Евангелия "Иисуса Христа" г.Мозыря";s:11:"admin_email";s:28:"mashakovalchuk1997@gmail.com";s:8:"template";s:8:"max-zmey";s:12:"groups_allow";s:3221:"_serialize_a:32:{s:16:"edit_users_group";s:82:"Разрешить изменять группу другим участникам";s:21:"edit_users_admin_note";s:69:"Разрешить изменять примечание админа";s:16:"edit_other_users";s:99:"Разрешить изменять анкетные данные других участников";s:15:"edit_self_users";s:74:"Разрешить изменять свои анкетные данные";s:19:"edit_users_password";s:82:"Разрешить изменять пароль других участников";s:18:"edit_add_new_users";s:75:"Разрешить добавлять новых пользователей";s:17:"edit_delete_users";s:60:"Разрешить удалять пользователей";s:16:"edit_page_author";s:44:"Разрешить менять автора";s:17:"admin_users_group";s:71:"Админ-доступ к «Группам и разрешениям»";s:17:"admin_users_users";s:70:"Админ-доступ к «Список пользователей»";s:13:"admin_plugins";s:47:"Админ-доступ к «Плагинам»";s:9:"admin_cat";s:45:"Админ-доступ к «Рубрики»";s:13:"admin_options";s:49:"Админ-доступ к «Настройки»";s:10:"admin_page";s:60:"Админ-доступ к «Страницы-список»";s:14:"admin_page_new";s:62:"Админ-доступ к «Создание страниц»";s:18:"admin_page_publish";s:114:"Разрешить сразу публиковать записи. Иначе только как черновик";s:17:"admin_page_delete";s:50:"Разрешить удалять страницы";s:15:"admin_page_edit";s:74:"Админ-доступ к «Редактирование страниц»";s:21:"admin_page_edit_other";s:81:"Админ-доступ к редактированию чужих страниц";s:14:"admin_sidebars";s:66:"Админ-доступ к настройкам сайдбаров";s:14:"admin_comments";s:70:"Админ-доступ к просмотру комментариев";s:19:"admin_comments_edit";s:80:"Админ-доступ к редактированию комментариев";s:14:"admin_comusers";s:57:"Админ-доступ к «Комментаторам»";s:10:"admin_home";s:80:"Разрешить доступ (выборочно) к «Информация»";s:12:"editor_files";s:66:"Разрешить доступ к редактору файлов";s:11:"admin_files";s:76:"Админ-доступ к файлам (загрузка, просмотр)";s:20:"admin_plugin_options";s:83:"Админ-доступ к редактированию опций плагинов";s:22:"template_options_admin";s:51:"Доступ к настройкам шаблона";s:24:"xml_sitemap_to_hook_edit";s:63:"Админ-доступ к настройкам «XML Sitemap»";s:14:"smtp_mail_edit";s:57:"Админ-доступ к настройкам smtp_mail";s:16:"ulogin_auth_edit";s:54:"Админ-доступ к настройкам ulogin";s:13:"uppod_options";s:75:"Админ-доступ к опциям плагина «Uppod-плеер»";}";s:11:"description";s:393:"Сайт создан с целью показать жить общины: людей верящих в Бога. На данном сайте можно найти актуальные новости из мира, в котором люди верят в Бога. Так же можно узнать информацию из жизнь религиозной общины г.Мозыря.";s:8:"keywords";s:77:"Бог. Религия. Иисус. Церковь. Евреи. Община.";s:9:"time_zone";s:4:"0.00";s:11:"jquery_type";s:6:"google";s:18:"admin_email_server";s:28:"mashakovalchuk1997@gmail.com";s:14:"comments_email";s:0:"";s:34:"template_email_message_new_comment";s:782:"Новый комментарий на "{{ $page_title }}"
+{{ $comment_url }} 
+ 
+{% if (!$comments_approved) : %}
+Комментарий требует модерации: {{ $edit_link }} 
+ 
+{% endif %}
+Автор IP: {{ $comment_ip }} 
+Referer: {{ $comment_referer }} 
+Дата: {{ $comment_date }} 
+ 
+{% if ($user) : %}
+Пользователь: {{ $user_id }} 
+{% endif %}
+{% if ($comuser) : %}
+Комюзер: id={{ $comuser_id }}, ник: {{ $comuser_nik }}, email: {{ $comuser_email }} 
+Профиль: {{ $comuser_url }} 
+{% endif %}
+{% if ($anonim) : %}
+Аноним: {{ $anonim }} 
+{% endif %}
+ 
+Текст:
+{{ $comment_content }} 
+ 
+Администрировать комментарий вы можете по ссылке:
+{{ $edit_link }} 
+";s:34:"template_email_message_new_comuser";s:1169:"{% if ($activate_auto) : %}
+Спасибо за регистрацию на сайте "{{ $name_site }}" — {{ $site_url }} 
+ 
+Ваша страница:
+{{ $comuser_url }} 
+ 
+Ваш код активации:
+{{ $activate_key }} 
+ 
+Сохраните это письмо, поскольку код активации может понадобиться для смены пароля.
+{% else: %}
+Вы или кто-то еще зарегистрировал ваш адрес на сайте "{{ $name_site }}" — {{ $site_url }} 
+ 
+Если это действительно сделали вы, то вам нужно подтвердить эту регистрацию. Для этого следует пройти по ссылке:
+{{ $comuser_url }} 
+ 
+И ввести следующий код для активации:
+{{ $activate_key }} 
+ 
+(Сохраните это письмо, поскольку код активации может понадобиться для смены пароля.)
+ 
+Если же регистрацию выполнили не вы, то просто удалите это письмо.
+{% endif %}";s:28:"subscribe_message_my_comment";s:1:"1";s:27:"new_comment_anonim_moderate";s:1:"0";s:28:"new_comment_comuser_moderate";s:1:"0";s:20:"allow_comment_anonim";s:1:"0";s:22:"allow_comment_comusers";s:1:"1";s:10:"rules_site";s:0:"";s:20:"email_comments_level";s:1:"5";s:24:"allow_comments_subscribe";s:1:"0";s:28:"form_comment_anonim_moderate";s:84:"Комментарий будет опубликован после проверки";s:19:"form_comment_anonim";s:54:"Используйте нормальные имена";s:20:"form_comment_comuser";s:0:"";s:25:"comment_other_system_code";s:0:"";s:14:"admin_template";s:3:"two";s:22:"admin_template_profile";s:30:"theme-red.css font-verdana.css";s:10:"admin_lang";s:0:"";s:20:"admin_menu_favorites";s:0:"";s:20:"admin_block_for_home";s:393:"Сайт создан с целью показать жить общины: людей верящих в Бога. На данном сайте можно найти актуальные новости из мира, в котором люди верят в Бога. Так же можно узнать информацию из жизнь религиозной общины г.Мозыря.";s:13:"resize_images";s:3:"600";s:25:"upload_resize_images_type";s:5:"width";s:15:"size_image_mini";s:3:"150";s:22:"size_image_mini_height";s:3:"150";s:18:"upload_type_resize";s:23:"resize_full_crop_center";s:15:"image_mini_type";s:1:"1";s:14:"watermark_type";s:1:"1";s:16:"admin_view_files";s:4:"mini";s:16:"admin_sort_files";s:8:"name_asc";s:23:"admin_files_field_count";s:1:"3";s:13:"allowed_types";s:107:"mp3|gif|jpg|jpeg|png|svg|zip|txt|rar|doc|rtf|pdf|html|htm|css|xml|odt|avi|wmv|flv|swf|wav|xls|7z|gz|bz2|tgz";s:13:"cache_dinamic";s:1:"0";s:42:"new_comment_comuser_moderate_first_comment";s:1:"0";s:25:"allow_comment_comuser_url";s:1:"0";s:17:"form_comment_easy";s:1:"0";s:22:"comusers_activate_auto";s:1:"1";s:20:"comment_other_system";s:1:"0";s:29:"comment_other_system_standart";s:1:"0";s:13:"max_3000_news";s:1:"1";s:13:"use_watermark";s:1:"0";s:14:"active_plugins";s:244:"_serialize_a:11:{i:0;s:9:"auth_form";i:1;s:6:"bbcode";i:2;s:8:"calendar";i:3;s:14:"comment_smiles";i:4;s:10:"last_pages";i:5;s:8:"lightbox";i:6;s:11:"pagination2";i:7;s:6:"smiles";i:8;s:11:"ulogin_auth";i:9;s:5:"uppod";i:10;s:11:"xml_sitemap";}";s:16:"description_site";s:0:"";}s:7:"default";a:59:{s:17:"header_component1";s:4:"top1";s:17:"footer_component1";s:16:"footer-copy-stat";s:16:"top1_header_logo";s:98:"http://religion.by/cms-master/application/maxsite/templates/default/assets/images/logos/logo01.png";s:28:"top1_header_logo_type_resize";s:23:"resize_full_crop_center";s:13:"info-top_page";s:13:"next-prev.php";s:30:"template_set_component_options";s:1:"1";s:21:"main_template_default";s:0:"";s:10:"home_units";s:0:"";s:18:"main_template_home";s:0:"";s:13:"info-top_home";s:0:"";s:18:"main_template_page";s:0:"";s:22:"main_template_category";s:0:"";s:17:"info-top_category";s:0:"";s:13:"category_unit";s:0:"";s:21:"category_unit_default";s:0:"";s:17:"main_template_tag";s:0:"";s:12:"info-top_tag";s:0:"";s:21:"main_template_archive";s:0:"";s:16:"info-top_archive";s:0:"";s:20:"main_template_author";s:0:"";s:15:"info-top_author";s:0:"";s:18:"main_template_slug";s:0:"";s:13:"info-top_slug";s:0:"";s:8:"my_style";s:0:"";s:20:"image_for_page_width";s:3:"280";s:21:"image_for_page_height";s:3:"210";s:24:"image_for_page_css_class";s:4:"left";s:19:"image_for_page_link";s:1:"1";s:17:"header_component2";s:1:"0";s:17:"header_component3";s:1:"0";s:17:"header_component4";s:1:"0";s:17:"header_component5";s:1:"0";s:17:"footer_component2";s:1:"0";s:17:"footer_component3";s:1:"0";s:17:"footer_component4";s:1:"0";s:17:"footer_component5";s:1:"0";s:10:"any1_block";s:0:"";s:17:"any1_rules_output";s:0:"";s:10:"any2_block";s:0:"";s:17:"any2_rules_output";s:0:"";s:10:"file1_file";s:0:"";s:18:"file1_rules_output";s:0:"";s:10:"file2_file";s:0:"";s:18:"file2_rules_output";s:0:"";s:13:"footer_block1";s:0:"";s:13:"footer_block2";s:0:"";s:19:"footer_rules_output";s:0:"";s:17:"footer_any1_block";s:0:"";s:24:"footer_any1_rules_output";s:0:"";s:11:"lightslider";s:477:"[options]
+block_start = <div class="layout-center-wrap"><div class="layout-wrap mar10-t pad20-rl">
+block_end = </div></div>
+[/options]
+
+[js]
+item: 2,
+auto: true,
+loop: true,
+speed: 400,
+[/js]
+
+[slide]
+<h3 class="bg-blue pad20 t-center">1</h3>
+[/slide]
+
+[slide]
+<h3 class="bg-yellow pad20 t-center">2</h3>
+[/slide]
+
+[slide]
+<h3 class="bg-red t-white pad20 t-center">3</h3>
+[/slide]
+
+[slide]
+<h3 class="bg-gray800 t-white pad20 t-center">4</h3>
+[/slide]";s:24:"lightslider_rules_output";s:0:"";s:22:"top1_header_logo_width";s:1:"0";s:23:"top1_header_logo_height";s:1:"0";s:21:"top1_header_logo_attr";s:0:"";s:10:"top1_block";s:0:"";s:17:"top1_rules_output";s:0:"";s:16:"default_profiles";s:104:"_serialize_a:3:{i:0;s:16:"font-georgia.css";i:1;s:21:"paragraph-justify.css";i:2;s:14:"theme-blue.css";}";s:14:"file1_use_tmpl";s:1:"0";s:14:"file2_use_tmpl";s:1:"0";}s:7:"plugins";a:12:{s:11:"pagination2";s:110:"_serialize_a:3:{s:3:"old";s:21:"Старее &gt;&gt;";s:3:"new";s:19:"&lt;&lt; Новее";s:3:"sep";s:0:"";}";s:13:"plugin_bbcode";s:45:"_serialize_a:1:{s:12:"bbcode_level";s:1:"3";}";s:18:"auth_form_widget_0";s:144:"_serialize_a:5:{s:6:"header";s:0:"";s:10:"after_form";s:0:"";s:12:"registration";s:1:"1";s:12:"lostpassword";s:1:"0";s:11:"before_form";s:0:"";}";s:18:"plugin_ulogin_auth";s:378:"_serialize_a:9:{s:11:"widget_type";s:5:"small";s:10:"auth_title";s:6:"ulogin";s:25:"widget_fcomments_priority";s:2:"99";s:18:"widget_type_flogin";s:5:"small";s:17:"auth_title_flogin";s:6:"ulogin";s:22:"widget_flogin_priority";s:2:"99";s:13:"providers_set";s:33:"vkontakte,odnoklassniki,facebook ";s:16:"providers_hidden";s:28:"mailru,twitter,google,yandex";s:6:"fields";s:0:"";}";s:18:"plugin_xml_sitemap";s:386:"_serialize_a:8:{s:13:"freq_priority";s:152:"home | daily | 1
+notblog | monthly | 0.7
+blog | weekly | 0.5
+category | weekly | 0.3
+tag | weekly | 0.3
+comuser | weekly | 0.3
+user | weekly | 0.3";s:9:"page_hide";s:0:"";s:14:"page_cats_hide";s:0:"";s:15:"categories_show";s:0:"";s:11:"custom_urls";s:0:"";s:9:"tags_show";s:1:"0";s:13:"comusers_show";s:1:"0";s:10:"users_show";s:1:"0";}";s:11:"plugin_shjs";s:78:"_serialize_a:2:{s:3:"css";s:10:"sh_maxsite";s:12:"default_lang";s:6:"sh_php";}";s:20:"search_form_widget_0";s:184:"_serialize_a:6:{s:6:"header";s:0:"";s:4:"text";s:20:"Что искать?";s:6:"submit";s:10:"Поиск";s:10:"style_text";s:0:"";s:12:"style_submit";s:0:"";s:10:"text_posle";s:0:"";}";s:17:"calendar_widget_0";s:56:"_serialize_a:1:{s:6:"header";s:18:"Календарь";}";s:19:"last_pages_widget_0";s:527:"_serialize_a:14:{s:6:"header";s:31:"Последние записи";s:6:"format";s:58:"<h4>[TITLE]</h4><p>[DATE] [COMMENTS]</p>[IMG]<p>[TEXT]</p>";s:11:"date_format";s:5:"d/m/Y";s:15:"comments_format";s:36:" | Комментариев: [COUNT]";s:5:"count";i:7;s:9:"page_type";s:4:"blog";s:11:"include_cat";s:0:"";s:4:"sort";s:17:"page_date_publish";s:10:"sort_order";s:4:"desc";s:12:"img_prev_def";s:0:"";s:13:"img_prev_attr";s:19:"class="b-left w100"";s:9:"max_words";s:2:"20";s:7:"text_do";s:0:"";s:10:"text_posle";s:0:"";}";s:17:"category_widget_0";s:417:"_serialize_a:11:{s:6:"header";s:14:"Рубрики";s:6:"format";s:49:"[LINK][TITLE]<sup>[COUNT]</sup>[/LINK]<br>[DESCR]";s:14:"format_current";s:49:"<span>[TITLE]<sup>[COUNT]</sup></span><br>[DESCR]";s:7:"include";s:0:"";s:7:"exclude";s:0:"";s:10:"hide_empty";s:1:"1";s:5:"order";s:13:"category_name";s:9:"order_asc";s:3:"ASC";s:13:"include_child";s:1:"1";s:8:"nofollow";s:1:"0";s:20:"group_header_no_link";s:1:"1";}";s:19:"text_block_widget_0";s:77:"_serialize_a:3:{s:6:"header";s:0:"";s:4:"text";s:0:"";s:4:"type";s:4:"html";}";s:12:"plugin_uppod";s:638:"_serialize_a:20:{s:12:"pleerversion";s:3:"swf";s:15:"warning_message";s:82:"Требуется включить JavaScript или обновить плеер!";s:7:"bgcolor";s:6:"FFFFFF";s:5:"wmode";s:0:"";s:11:"html_before";s:0:"";s:10:"html_after";s:0:"";s:14:"editor_buttons";s:1:"1";s:10:"code_video";s:5:"video";s:11:"style_video";s:0:"";s:11:"width_video";s:3:"600";s:12:"height_video";s:3:"375";s:10:"fullscreen";s:1:"1";s:10:"code_audio";s:5:"audio";s:11:"style_audio";s:0:"";s:11:"width_audio";s:3:"400";s:12:"height_audio";s:2:"90";s:6:"center";s:1:"0";s:8:"comments";s:1:"0";s:9:"tag_uppod";s:1:"0";s:11:"tag_youtube";s:1:"0";}";}s:9:"templates";a:46:{s:23:"page_404_http_not_found";s:1:"1";s:17:"default_canonical";s:1:"1";s:16:"page_view_enable";s:1:"1";s:12:"comusers_url";s:1:"0";s:15:"leave_a_comment";s:47:"Ваше мнение важно для нас!";s:16:"page_other_pages";s:33:"Еще записи по теме";s:22:"page_other_pages_limit";s:1:"3";s:22:"page_other_pages_order";s:17:"page_date_publish";s:26:"page_other_pages_order_asc";s:6:"random";s:25:"page_other_pages_algoritm";s:3:"all";s:13:"title_contact";s:28:" Обратная связь";s:12:"form_contact";s:743:"[form]
+
+[options]
+email = mashakovalchuk1997@gmail.com
+[/options]
+
+[field]
+require = 1
+type = select
+description = Тема письма
+values = Пожелания по сайту # Нашел ошибку на сайте # Подскажите, пожалуйста
+default = Пожелания по сайту
+subject = 1
+[/field]
+
+[field]
+require = 1
+type = text
+description = Ваше имя
+placeholder = Ваше имя
+[/field]
+
+[field]
+require = 1
+type = text
+clean = email
+description = Ваш email
+placeholder = Ваш email
+from = 1
+[/field]
+
+
+[field]
+require = 1
+type = textarea
+description = Ваш вопрос
+placeholder = О чем вы хотите написать?
+[/field]
+
+[/form]";s:12:"prew_contact";s:75:"<h2>Помогите нам улучшить сайт для Вас!</h2>
+";s:12:"post_contact";s:74:"Спасибо! Ваше мнение очень важно для нас!";s:13:"gravatar_type";s:0:"";s:13:"gravatar_size";s:2:"80";s:4:"more";s:13:"Далее...";s:15:"default_favicon";s:10:"images.png";s:17:"use_html_compress";s:1:"0";s:13:"gravatar_only";s:1:"0";s:15:"home_limit_post";s:1:"5";s:14:"home_full_text";s:1:"1";s:10:"home_order";s:17:"page_date_publish";s:14:"home_order_asc";s:4:"desc";s:12:"home_page_id";s:1:"0";s:11:"home_cat_id";s:1:"0";s:16:"home_page_id_top";s:1:"0";s:12:"home_text_do";s:0:"";s:15:"home_cache_time";s:1:"0";s:10:"limit_post";s:1:"7";s:14:"limit_post_rss";s:1:"7";s:14:"comments_count";s:2:"10";s:22:"category_show_rss_text";s:1:"1";s:18:"category_full_text";s:1:"1";s:13:"tag_full_text";s:1:"1";s:17:"archive_full_text";s:1:"1";s:16:"author_full_text";s:1:"1";s:8:"top_menu";s:211:"| Главная
+page/audio | Аудиозаписи
+page/video | Видеозаписи
+page/fotografii-obshhiny | Фотографии 
+page/about | Об общине
+contact | Обратная связь";s:6:"social";s:0:"";s:14:"home_last_page";s:1:"0";s:14:"home_cat_block";s:1:"0";s:24:"default_description_home";s:1:"0";s:28:"default_description_home_cat";s:1:"0";s:8:"full_rss";s:1:"0";s:5:"menu2";s:16:"| Главная";s:5:"menu3";s:0:"";}s:10:"max-turdus";a:4:{s:17:"header_component1";s:4:"menu";s:17:"header_component2";s:4:"top1";s:17:"footer_component1";s:6:"footer";s:30:"template_set_component_options";s:1:"1";}s:10:"max-sialia";a:52:{s:17:"header_component1";s:4:"top1";s:17:"header_component2";s:4:"menu";s:17:"footer_component1";s:6:"footer";s:30:"template_set_component_options";s:1:"1";s:10:"home_units";s:0:"";s:21:"main_template_default";s:0:"";s:18:"main_template_home";s:0:"";s:13:"info-top_home";s:0:"";s:18:"main_template_page";s:0:"";s:13:"info-top_page";s:0:"";s:22:"main_template_category";s:0:"";s:17:"info-top_category";s:0:"";s:13:"category_unit";s:0:"";s:21:"category_unit_default";s:0:"";s:17:"main_template_tag";s:0:"";s:12:"info-top_tag";s:0:"";s:21:"main_template_archive";s:0:"";s:16:"info-top_archive";s:0:"";s:20:"main_template_author";s:0:"";s:15:"info-top_author";s:0:"";s:18:"main_template_slug";s:0:"";s:13:"info-top_slug";s:0:"";s:8:"my_style";s:0:"";s:20:"image_for_page_width";s:3:"280";s:21:"image_for_page_height";s:3:"210";s:24:"image_for_page_css_class";s:4:"left";s:19:"image_for_page_link";s:1:"1";s:17:"header_component3";s:1:"0";s:17:"header_component4";s:1:"0";s:17:"header_component5";s:1:"0";s:17:"footer_component2";s:1:"0";s:17:"footer_component3";s:1:"0";s:17:"footer_component4";s:1:"0";s:17:"footer_component5";s:1:"0";s:16:"lightslider_home";s:418:"[options]
+block_start = <div class="mar30-b">
+block_end = </div>
+[/options]
+
+[js]
+item: 1,
+auto: true,
+loop: true,
+speed: 400,
+[/js]
+
+[slide]
+<h3 class="bg-blue pad20 t-center">1</h3>
+[/slide]
+
+[slide]
+<h3 class="bg-yellow pad20 t-center">2</h3>
+[/slide]
+
+[slide]
+<h3 class="bg-red t-white pad20 t-center">3</h3>
+[/slide]
+
+[slide]
+<h3 class="bg-gray800 t-white pad20 t-center">4</h3>
+[/slide]";s:10:"any1_block";s:0:"";s:17:"any1_rules_output";s:0:"";s:10:"any2_block";s:0:"";s:17:"any2_rules_output";s:0:"";s:10:"file1_file";s:0:"";s:18:"file1_rules_output";s:0:"";s:10:"file2_file";s:0:"";s:18:"file2_rules_output";s:0:"";s:17:"footer_any1_block";s:0:"";s:24:"footer_any1_rules_output";s:0:"";s:11:"lightslider";s:524:"[options]
+block_start = <div class="layout-center-wrap"><div class="layout-wrap mar10-t pad20-rl">
+block_end = </div></div>
+[/options]
+
+[js]
+item: 2,
+auto: true,
+loop: true,
+speed: 400,
+adaptiveHeight: true,
+[/js]
+
+[slide]
+<img src="http://religion.by/cms-master/uploads/photo/pesah_2017-295x100.jpg" alt="pesah_2017-295x100.jpg" title="pesah_2017-295x100.jpg">
+[/slide]
+
+[slide]
+<h3 class="bg-yellow pad20 t-center">2</h3>
+[/slide]
+
+[slide]
+<h3 class="bg-red t-white pad20 t-center">3</h3>
+[/slide]
+";s:24:"lightslider_rules_output";s:0:"";s:12:"owl-carousel";s:477:"[options]
+block_start = <div class="layout-center-wrap"><div class="layout-wrap mar10-t pad20-rl">
+block_end = </div></div>
+[/options]
+
+[js]
+item: 2,
+auto: true,
+loop: true,
+speed: 400,
+[/js]
+
+[slide]
+<h3 class="bg-blue pad20 t-center">1</h3>
+[/slide]
+
+[slide]
+<h3 class="bg-yellow pad20 t-center">2</h3>
+[/slide]
+
+[slide]
+<h3 class="bg-red t-white pad20 t-center">3</h3>
+[/slide]
+
+[slide]
+<h3 class="bg-gray800 t-white pad20 t-center">4</h3>
+[/slide]";s:25:"owl-carousel_rules_output";s:0:"";s:16:"default_profiles";s:1:"0";s:14:"file1_use_tmpl";s:1:"0";s:14:"file2_use_tmpl";s:1:"0";}s:5:"admin";a:1:{s:14:"editor_options";s:337:"_serialize_a:11:{s:9:"tags_sort";s:1:"0";s:10:"tags_count";s:2:"20";s:21:"comment_allow_checked";s:1:"1";s:18:"feed_allow_checked";s:1:"1";s:13:"editor_height";s:3:"400";s:10:"cat_height";s:1:"0";s:7:"preview";s:1:"1";s:11:"page_status";s:1:"1";s:10:"page_files";s:1:"1";s:15:"page_all_parent";s:1:"1";s:18:"previewautorefresh";s:1:"0";}";}s:8:"sidebars";a:1:{s:10:"sidebars-1";s:128:"_serialize_a:4:{i:0;s:16:"auth_form_widget";i:1;s:15:"category_widget";i:2;s:15:"calendar_widget";i:3;s:17:"last_pages_widget";}";}s:8:"max-zmey";a:51:{s:8:"my_style";s:0:"";s:17:"header_component1";s:4:"top1";s:17:"header_component2";s:4:"menu";s:17:"footer_component1";s:6:"footer";s:30:"template_set_component_options";s:1:"1";s:10:"home_units";s:0:"";s:21:"main_template_default";s:0:"";s:18:"main_template_home";s:0:"";s:13:"info-top_home";s:0:"";s:18:"main_template_page";s:0:"";s:13:"info-top_page";s:0:"";s:22:"main_template_category";s:0:"";s:17:"info-top_category";s:0:"";s:13:"category_unit";s:0:"";s:21:"category_unit_default";s:0:"";s:17:"main_template_tag";s:0:"";s:12:"info-top_tag";s:0:"";s:21:"main_template_archive";s:0:"";s:16:"info-top_archive";s:0:"";s:20:"main_template_author";s:0:"";s:15:"info-top_author";s:0:"";s:18:"main_template_slug";s:0:"";s:13:"info-top_slug";s:0:"";s:20:"image_for_page_width";s:3:"280";s:21:"image_for_page_height";s:3:"210";s:24:"image_for_page_css_class";s:4:"left";s:19:"image_for_page_link";s:1:"1";s:17:"header_component3";s:1:"0";s:17:"header_component4";s:1:"0";s:17:"header_component5";s:1:"0";s:17:"footer_component2";s:1:"0";s:17:"footer_component3";s:1:"0";s:17:"footer_component4";s:1:"0";s:17:"footer_component5";s:1:"0";s:10:"any1_block";s:0:"";s:17:"any1_rules_output";s:0:"";s:10:"any2_block";s:0:"";s:17:"any2_rules_output";s:0:"";s:10:"file1_file";s:0:"";s:18:"file1_rules_output";s:0:"";s:10:"file2_file";s:0:"";s:18:"file2_rules_output";s:0:"";s:17:"footer_any1_block";s:0:"";s:24:"footer_any1_rules_output";s:0:"";s:11:"lightslider";s:477:"[options]
+block_start = <div class="layout-center-wrap"><div class="layout-wrap mar10-t pad20-rl">
+block_end = </div></div>
+[/options]
+
+[js]
+item: 2,
+auto: true,
+loop: true,
+speed: 400,
+[/js]
+
+[slide]
+<h3 class="bg-blue pad20 t-center">1</h3>
+[/slide]
+
+[slide]
+<h3 class="bg-yellow pad20 t-center">2</h3>
+[/slide]
+
+[slide]
+<h3 class="bg-red t-white pad20 t-center">3</h3>
+[/slide]
+
+[slide]
+<h3 class="bg-gray800 t-white pad20 t-center">4</h3>
+[/slide]";s:24:"lightslider_rules_output";s:0:"";s:12:"owl-carousel";s:477:"[options]
+block_start = <div class="layout-center-wrap"><div class="layout-wrap mar10-t pad20-rl">
+block_end = </div></div>
+[/options]
+
+[js]
+item: 2,
+auto: true,
+loop: true,
+speed: 400,
+[/js]
+
+[slide]
+<h3 class="bg-blue pad20 t-center">1</h3>
+[/slide]
+
+[slide]
+<h3 class="bg-yellow pad20 t-center">2</h3>
+[/slide]
+
+[slide]
+<h3 class="bg-red t-white pad20 t-center">3</h3>
+[/slide]
+
+[slide]
+<h3 class="bg-gray800 t-white pad20 t-center">4</h3>
+[/slide]";s:25:"owl-carousel_rules_output";s:0:"";s:16:"default_profiles";s:1:"0";s:14:"file1_use_tmpl";s:1:"0";s:14:"file2_use_tmpl";s:1:"0";}}
